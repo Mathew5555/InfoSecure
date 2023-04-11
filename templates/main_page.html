@@ -1,9 +1,42 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Загрузить файл формата ".txt" с вредоносными сайтами</h1>
-<form method=post enctype=multipart/form-data>
-      <p><input type="file" name="input_file" /></p>
-      <p><input type="submit" value="Process the file"/></p>
-    </form>
+<body>
+  <div class="text-center h1">Актуальная база нежелательных сайтов!</div>
+  <br>
+  <div class="text-center h2">Добавляйте новые известные вам сайты для обновления базы</div>
+ <div class="container">
+  <div class="form-left">
+   <h2>Формат файлов</h2>
+   <ol class="list-group list-group-numbered">
+  <li class="list-group-item">Текстовый, *.txt</li>
+  <li class="list-group-item">Документ, *.docx</li>
+</ol>
+   <form method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+     <div class="mb-3">
+       <label for="formFile" class="form-label">Сайты разделять переносом строк</label>
+       <input name="input_file" class="form-control" type="file" id="formFile">
+     </div>
+    </div>
+    <div class="form-group">
+     <input type="submit" name="submit" value="Отправить">
+    </div>
+   </form>
+  </div>
+  <div class="form-right">
+   <h2>Заполнить форму</h2>
+   <form  method="POST">
+    <div class="form-group">
+     <label for="message">Сайты</label>
+     <textarea name="message" id="message"></textarea>
+    </div>
+    <div class="form-group">
+     <input type="submit" name="submit-2" value="Отправить">
+    </div>
+   </form>
+  </div>
+ </div>
+</body>
+</html>
 {% endblock %}
