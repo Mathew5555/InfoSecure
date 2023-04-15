@@ -2,11 +2,47 @@
 
 {% block content %}
 
-<h3 class="text-center">Список заблокированных сайтов</h3>
-<ul class="list-group list-group-light mx-auto" style="width: 450px;">
-    <li class="list-group-item text-center">Сайт</li>
-    {% for el in params %}
-    <li class="list-group-item">{{ el }}</li>
+<h3 class="text-center">Список заблокированных доменов</h3>
+<!--<ul class="list-group list-group-light mx-auto" style="width: 500px;">-->
+<!--    <li class="list-group-item text-center">Домен</li>-->
+<!--    {% for el in params[0] + params[1] %}-->
+<!--    <li class="list-group-item"><a href="/block"  class="text-dark btn">{{ el }}</a>-->
+<!--        {% if is_user %}-->
+<!--        <a href="/delete_site/{{ el }}" class="btn btn-danger">-->
+<!--            Удалить-->
+<!--        </a>-->
+<!--        {% endif %}-->
+<!--    </li>-->
+<!--    {% endfor %}-->
+<!--</ul>-->
+ <div class="container">
+  <div class="form-left">
+   <ul class="list-group list-group-light mx-auto" style="width: 450px;">
+    <li class="list-group-item text-center">Домен</li>
+    {% for el in params[0] %}
+    <li class="list-group-item"><a href="/block"  class="text-dark btn">{{ el }}</a>
+        {% if is_user %}
+        <a href="/delete_site/{{ el }}" class="btn btn-danger">
+            Удалить
+        </a>
+        {% endif %}
+    </li>
     {% endfor %}
 </ul>
+  </div>
+  <div class="form-right">
+   <ul class="list-group list-group-light mx-auto" style="width: 450px;">
+    <li class="list-group-item text-center">Домен</li>
+    {% for el in params[1] %}
+    <li class="list-group-item"><a href="/block"  class="text-dark btn">{{ el }}</a>
+        {% if is_user %}
+        <a href="/delete_site/{{ el }}" class="btn btn-danger">
+            Удалить
+        </a>
+        {% endif %}
+    </li>
+    {% endfor %}
+</ul>
+  </div>
+ </div>
 {% endblock %}

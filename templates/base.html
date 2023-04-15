@@ -18,8 +18,27 @@
                 <a class="nav-link h3 link-light" href="/">Главная</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link h3 link-light" href="/list">Заблокированные сайты</a>
+                <a class="nav-link h3 link-light" href="/list">Заблокированные домены</a>
             </li>
+            {% if not is_user %}
+            <li class="nav-item">
+                <a class="nav-link h3 link-light" href="/complaint">Подать жалобу</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link h3 link-light" href="/login">Вход Админа</a>
+            </li>
+            {% endif %}
+            {% if is_user %}
+            <li class="nav-item">
+                <a class="nav-link h3 link-light" href="/check">Проверка</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link h3 link-light" href="/check_complaint">Жалобы</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link h3 link-light" href="/logout">Выход</a>
+            </li>
+            {% endif %}
         </ul>
     </nav>
 </header>

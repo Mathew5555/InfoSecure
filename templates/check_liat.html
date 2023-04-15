@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h3 class="text-center">Список непроверенных доменов</h3>
+<ul class="list-group list-group-light mx-auto" style="width: 450px;">
+    <li class="list-group-item text-center">Домен</li>
+    {% for el in params %}
+    <li class="list-group-item">{{ el }}
+        <a href="/check_add/{{ el }}" class="btn btn-success">
+            Принять
+        </a>
+        <a href="/check_cancel/{{ el }}" class="btn btn-warning">
+            Отклонить
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
